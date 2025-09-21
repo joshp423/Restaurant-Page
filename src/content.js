@@ -5,6 +5,8 @@ export function content() {
     document.addEventListener("DOMContentLoaded", () => {
         const contentDiv = document.getElementById('content');
         const homeContainer = document.createElement('div');
+        const textContainer = document.createElement('div');
+
         const image = document.createElement('img');
         const header = document.createElement('h1');
         const blurb = document.createElement('p');
@@ -19,6 +21,7 @@ export function content() {
         contentDiv.appendChild(homeContainer);
         homeContainer.id = "homeContent";
         homeContainer.classList.add('activeContent')
-        homeContainer.append(image, header, blurb, photoCred);
+        homeContainer.append(image, textContainer);
+        textContainer.append(header, blurb, photoCred);
     })
 }

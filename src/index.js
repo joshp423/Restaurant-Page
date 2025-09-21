@@ -1,5 +1,6 @@
-import { content } from "./content.js"
-import { menuRender } from "./menu.js"
+import { content } from "./content.js";
+import { menuRender } from "./menu.js";
+import './style.css';
 
 const tabs = document.querySelectorAll('nav>div');
 

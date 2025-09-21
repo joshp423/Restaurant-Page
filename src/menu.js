@@ -3,6 +3,7 @@ export function menuRender() {
     const contentContainer = document.getElementById('content');
 
     const menuContainer = document.createElement('div');
+    menuContainer.id = 'menuContent'
     const starters = document.createElement('div');
     const starterHeader = document.createElement('h1');
     starterHeader.innerText = 'Starters';
@@ -11,13 +12,17 @@ export function menuRender() {
     const wareHengaHeader = document.createElement('h2');
     wareHengaHeader.innerText = "Warehenga";
     const wareHengaDesc = document.createElement('p');
-    wareHengaDesc.innerText = "shaved kingfish + burnt cucumber + avocado sorbet + ponzu + rocket";
+    wareHengaDesc.innerText = "Shaved kingfish + burnt cucumber + avocado sorbet + ponzu + rocket";
+    const wareHengaPrice = document.createElement('p');
+    wareHengaPrice.innerText = "$34";
 
     const wheke = document.createElement('div');
     const whekeHeader = document.createElement('h2');
     whekeHeader.innerText = "Wheke";
     const whekeDesc = document.createElement('p');
-    whekeDesc.innerText = "grilled octopus + octopus XO + bone marrow + mandarin + kiwifruit + chilli";
+    whekeDesc.innerText = "Grilled octopus + octopus XO + bone marrow + mandarin + kiwifruit + chilli";
+    const whekePrice = document.createElement('p');
+    whekePrice.innerText = "$36";
 
     const mains = document.createElement('div');
     const mainsHeader = document.createElement('h1');
@@ -28,12 +33,16 @@ export function menuRender() {
     hipiHeader.innerText = "Hipi";
     const hipiDesc = document.createElement('p');
     hipiDesc.innerText = "Coastal lamb loin & rib + rotisserie celeriac + nasturtium chimichurri + spiced macadamia";
+    const hipiPrice = document.createElement('p');
+    hipiPrice.innerText = "$46";
 
     const koura = document.createElement('div');
     const kouraHeader = document.createElement('h2');
     kouraHeader.innerText = "Koura";
     const kouraDesc = document.createElement('p');
-    kouraDesc.innerText = "wood-fired crayfish + heirloom carrots + mustard butter";
+    kouraDesc.innerText = "Wood-fired crayfish + heirloom carrots + mustard butter";
+    const kouraPrice = document.createElement('p');
+    kouraPrice.innerText = "$20 per 100g";
 
     const extras = document.createElement('div');
     const extrasHeader = document.createElement('h1');
@@ -44,19 +53,21 @@ export function menuRender() {
     riwaiHeader.innerText = "Riwai";
     const riwaiDesc = document.createElement('p');
     riwaiDesc.innerText = "Crispy agria potatoes + mushroom ketchup";
+    const riwaiPrice = document.createElement('p');
+    riwaiPrice.innerText = "$15";
 
     contentContainer.appendChild(menuContainer);
-    menuContainer.appendChild(starters, mains, extras);
+    menuContainer.append(starters, mains, extras);
 
-    starters.appendChild(starterHeader, wareHenga, wheke);
-    wareHenga.appendChild(wareHengaHeader, wareHengaDesc);
-    wheke.appendChild(whekeHeader, whekeDesc);
+    starters.append(starterHeader, wareHenga, wheke);
+    wareHenga.append(wareHengaHeader, wareHengaDesc, wareHengaPrice);
+    wheke.append(whekeHeader, whekeDesc, whekePrice);
 
-    mains.appendChild(mainsHeader, hipi, koura);
-    hipi.appendChild(hipiHeader, hipiDesc);
-    koura.appendChild(kouraHeader, kouraDesc);
+    mains.append(mainsHeader, hipi, koura);
+    hipi.append(hipiHeader, hipiDesc, hipiPrice);
+    koura.append(kouraHeader, kouraDesc, kouraPrice);
 
-    extras.appendChild(extrasHeader, riwai);
-    riwai.appendChild(riwaiHeader, riwaiDesc);
+    extras.append(extrasHeader, riwai);
+    riwai.append(riwaiHeader, riwaiDesc, riwaiPrice);
 
 }

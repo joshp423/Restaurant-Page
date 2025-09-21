@@ -2,22 +2,32 @@
 import { content } from "./content.js"
 import { menuRender } from "./menu.js"
 
-const tabs = document.querySelectorAll('header>nav>div');
+const tabs = document.querySelectorAll('nav>div');
+const 
 
-tabs.forEach(() => {
-    this.addEventListener('click', () => {
-        if (this.target.classList.contains('active')) {
-            this.target.classList.add('notActive');
-            this.target.classList.remove('active');
-            return;
+tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+
+        switch (tab.classList.contains('active')) {
+
+            case true:
+
+                break;
+            
+            case false:
+                tabs.forEach((tab) => {
+                    tab.classList.remove('active')
+                     tab.classList.add('notActive')
+                })
+                tab.classList.add('active');
+                tab.classList.remove('notActive');
+                break;
         }
-        this.target.classList.add('active');
-        this.target.classList.remove('notActive');
+
     });
 });
 
+sw
 content();
 menuRender();
-
-
 console.log("this is working :)")

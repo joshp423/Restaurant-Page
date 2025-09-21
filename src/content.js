@@ -17,6 +17,8 @@ export function content() {
         photoCred.innerText = "photo - Jason Leung";
 
         contentDiv.appendChild(homeContainer);
+        homeContainer.id = "homeContent";
+        homeContainer.classList.add('activeContent')
         homeContainer.append(image, header, blurb, photoCred);
     })
 }

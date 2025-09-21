@@ -57,6 +57,7 @@ export function menuRender() {
     riwaiPrice.innerText = "$15";
 
     contentContainer.appendChild(menuContainer);
+    menuContainer.classList.add('notActiveContent')
     menuContainer.append(starters, mains, extras);
 
     starters.append(starterHeader, wareHenga, wheke);

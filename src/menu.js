@@ -3,7 +3,7 @@ export function menuRender() {
     const contentContainer = document.getElementById('content');
 
     const menuContainer = document.createElement('div');
-    menuContainer.id = 'menuContent'
+    menuContainer.id = 'menuContent';
     const starters = document.createElement('div');
     const starterHeader = document.createElement('h1');
     starterHeader.innerText = 'Starters';
@@ -11,6 +11,7 @@ export function menuRender() {
     const wareHenga = document.createElement('div');
     const wareHengaHeader = document.createElement('h2');
     wareHengaHeader.innerText = "Warehenga";
+    const wareHengadescContainer = document.createElement('div');
     const wareHengaDesc = document.createElement('p');
     wareHengaDesc.innerText = "Shaved kingfish + burnt cucumber + avocado sorbet + ponzu + rocket";
     const wareHengaPrice = document.createElement('p');
@@ -19,6 +20,7 @@ export function menuRender() {
     const wheke = document.createElement('div');
     const whekeHeader = document.createElement('h2');
     whekeHeader.innerText = "Wheke";
+    const whekedescContainer = document.createElement('div');
     const whekeDesc = document.createElement('p');
     whekeDesc.innerText = "Grilled octopus + octopus XO + bone marrow + mandarin + kiwifruit + chilli";
     const whekePrice = document.createElement('p');
@@ -31,6 +33,7 @@ export function menuRender() {
     const hipi = document.createElement('div');
     const hipiHeader = document.createElement('h2');
     hipiHeader.innerText = "Hipi";
+    const hipidescContainer = document.createElement('div');
     const hipiDesc = document.createElement('p');
     hipiDesc.innerText = "Coastal lamb loin & rib + rotisserie celeriac + nasturtium chimichurri + spiced macadamia";
     const hipiPrice = document.createElement('p');
@@ -39,6 +42,7 @@ export function menuRender() {
     const koura = document.createElement('div');
     const kouraHeader = document.createElement('h2');
     kouraHeader.innerText = "Koura";
+    const kouradescContainer = document.createElement('div');
     const kouraDesc = document.createElement('p');
     kouraDesc.innerText = "Wood-fired crayfish + heirloom carrots + mustard butter";
     const kouraPrice = document.createElement('p');
@@ -51,24 +55,37 @@ export function menuRender() {
     const riwai = document.createElement('div');
     const riwaiHeader = document.createElement('h2');
     riwaiHeader.innerText = "Riwai";
+    const riwaidescContainer = document.createElement('div');
     const riwaiDesc = document.createElement('p');
     riwaiDesc.innerText = "Crispy agria potatoes + mushroom ketchup";
     const riwaiPrice = document.createElement('p');
     riwaiPrice.innerText = "$15";
 
+    const menuCredit = document.createElement('p');
+    menuCredit.innerText = "Menu items from Ahi Auckland NZ 2025"
+
     contentContainer.appendChild(menuContainer);
-    menuContainer.classList.add('notActiveContent')
-    menuContainer.append(starters, mains, extras);
+    menuContainer.classList.add('notActiveContent');
+    menuContainer.append(starters, mains, extras, menuCredit);
 
     starters.append(starterHeader, wareHenga, wheke);
-    wareHenga.append(wareHengaHeader, wareHengaDesc, wareHengaPrice);
-    wheke.append(whekeHeader, whekeDesc, whekePrice);
+    wareHenga.append(wareHengaHeader, wareHengadescContainer);
+    wareHengadescContainer.append(wareHengaDesc, wareHengaPrice);
+
+    wheke.append(whekeHeader, whekedescContainer);
+    whekedescContainer.append(whekeDesc, whekePrice);
 
     mains.append(mainsHeader, hipi, koura);
-    hipi.append(hipiHeader, hipiDesc, hipiPrice);
-    koura.append(kouraHeader, kouraDesc, kouraPrice);
+
+    hipi.append(hipiHeader, hipidescContainer);
+    hipidescContainer.append(hipiDesc, hipiPrice);
+
+    koura.append(kouraHeader, kouradescContainer);
+    kouradescContainer.append(kouraDesc, kouraPrice);
+    
 
     extras.append(extrasHeader, riwai);
-    riwai.append(riwaiHeader, riwaiDesc, riwaiPrice);
+    riwai.append(riwaiHeader, riwaidescContainer);
+    riwaidescContainer.append(riwaiDesc, riwaiPrice);
 
 }

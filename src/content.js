@@ -5,6 +5,7 @@ export function content() {
     document.addEventListener("DOMContentLoaded", () => {
         const contentDiv = document.getElementById('content');
         const homeContainer = document.createElement('div');
+        const headingContainer = document.createElement('div')
         const textContainer = document.createElement('div');
 
         const image = document.createElement('img');
@@ -15,13 +16,15 @@ export function content() {
         image.src = restaurantImage;
         image.alt = 'restaurant-photo';
         header.innerText = "Josh's Big Fancy Restaurant";
-        blurb.innerText = "Josh's Big Fancy Restaurant is the greatest restaurant ever, with a groundbreaking 4 Michelin stars and zero stressed chefs in the kitchen. A vision of peace and tranquility to satisfy your taste buds.";
+        blurb.innerText = " Josh's Big Fancy Restaurant is the greatest restaurant ever, with a groundbreaking 4 Michelin stars and zero stressed chefs in the kitchen. A vision of peace and tranquility to satisfy your taste buds.";
         photoCred.innerText = "photo - Jason Leung";
 
         contentDiv.appendChild(homeContainer);
         homeContainer.id = "homeContent";
         homeContainer.classList.add('activeContent')
-        homeContainer.append(image, textContainer);
-        textContainer.append(header, blurb, photoCred);
+        textContainer.id = "blurbContainer";
+        homeContainer.append(headingContainer, image, textContainer);
+        headingContainer.append(header)
+        textContainer.append(blurb, photoCred);
     })
 }

@@ -1,16 +1,19 @@
 import { content } from "./content.js";
 import { menuRender } from "./menu.js";
+import { contactRender } from "./contact.js";
 import './style.css';
 
 const tabs = document.querySelectorAll('nav>div');
 
 content();
 menuRender();
+contactRender();
 
 tabs.forEach((tab) => {
     tab.addEventListener('click', () => {
         const homeContent = document.getElementById('homeContent');
         const menuContent = document.getElementById('menuContent');
+        const contactContent = document.getElementById('contactContent');
 
         if (!tab.classList.contains('active')) {
                 tabs.forEach((tab) => {
@@ -27,6 +30,8 @@ tabs.forEach((tab) => {
                         homeContent.classList.remove('notActiveContent');
                         menuContent.classList.remove('activeContent');
                         menuContent.classList.add('notActiveContent');
+                        contactContent.classList.remove('activeContent');
+                        contactContent.classList.add('notActiveContent');
                         break;
                     
                     case "menu":
@@ -34,7 +39,17 @@ tabs.forEach((tab) => {
                         menuContent.classList.remove('notActiveContent');
                         homeContent.classList.remove('activeContent');
                         homeContent.classList.add('notActiveContent');
+                        contactContent.classList.remove('activeContent');
+                        contactContent.classList.add('notActiveContent');
                         break;
+
+                    case "contact":
+                        contactContent.classList.add('activeContent');
+                        contactContent.classList.remove('notActiveContent');
+                        menuContent.classList.remove('activeContent');
+                        menuContent.classList.add('notActiveContent');
+                        homeContent.classList.remove('activeContent');
+                        homeContent.classList.add('notActiveContent');
                 }
             }
         })

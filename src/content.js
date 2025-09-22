@@ -2,7 +2,6 @@ import restaurantImage from "./jason-leung-poI7DelFiVA-unsplash.jpg";
 
 export function content() {
 
-    document.addEventListener("DOMContentLoaded", () => {
         const contentDiv = document.getElementById('content');
         const homeContainer = document.createElement('div');
         const headingContainer = document.createElement('div')
@@ -26,5 +25,5 @@ export function content() {
         homeContainer.append(headingContainer, image, textContainer);
         headingContainer.append(header)
         textContainer.append(blurb, photoCred);
-    })
+    
 }
